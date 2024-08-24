@@ -9,15 +9,33 @@
 /* - Family: [Manrope](https://fonts.google.com/specimen/Manrope)
 - Weights: 800 */
 
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --clr-1: #052b2f;
+  --clr-2: #073438;
+  --clr-3: #0e4b50;
+  --clr-4: #2d8f85;
+  --clr-5: #637c54;
+}
+
 @import url("https://fonts.google.com/specimen/Manrope");
 
 body {
   background-color: hsl(218, 23%, 16%);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
+  background: var(--clr-2);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
 }
 
-#card {
+.card {
   display: flex;
   flex-direction: column;
   background-color: hsl(217, 19%, 24%);
@@ -27,13 +45,47 @@ body {
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: 200px;
   position: relative;
   border: #01d681;
   border-style: outset;
   border-width:1px;
   box-shadow: 0px 0px 500px rgba(0, 217, 119, 0.7);
+  background: var(--clr-1);
 }
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after, .card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 15px;
+  animation: 3s spin linear infinite;
+}
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
 
 #num {
   color: hsl(150, 100%, 66%);
