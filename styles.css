@@ -1,0 +1,47 @@
+/* Light Cyan: hsl(193, 38%, 86%)
+- Neon Green: hsl(150, 100%, 66%)
+
+### Neutral
+
+- Grayish Blue: hsl(217, 19%, 38%)
+- Dark Grayish Blue: hsl(217, 19%, 24%)
+- Dark Blue: hsl(218, 23%, 16%) */
+/* - Family: [Manrope](https://fonts.google.com/specimen/Manrope)
+- Weights: 800 */
+
+@import url('https://fonts.google.com/specimen/Manrope');
+
+body {
+    background-color:hsl(218, 23%, 16%)  ;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+}
+ 
+
+#card {
+ background-color: hsl(217, 19%, 24%);
+ height: 300px;
+ width: 600px;
+ border-radius: 20px;
+ align-self: center;
+ justify-content: center;
+ margin: auto;
+ margin-top: 200px;
+}
+
+#num{
+    color:hsl(150, 100%, 66%) ;
+    letter-spacing: 4px;
+    font-size: small;
+    justify-content: center;
+}
+
+#adv{
+    color:hsl(193, 38%, 86%) ;
+    font-size: larger;
+
+}
+
+#icon{
+
+}
