@@ -101,6 +101,7 @@ body {
   color: hsl(150, 100%, 66%);
   letter-spacing: 4px;
   font-size: small;
+  margin-top: 25px;
 }
 
 #adv {
