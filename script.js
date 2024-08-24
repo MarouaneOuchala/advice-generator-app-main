@@ -1,5 +1,18 @@
 const api = "https://api.adviceslip.com/advice";
 const dice = document.getElementById('icon');
+const time = document.getElementById('time');
+
+function updateTime() {
+    const currentDate = new Date();
+    const hours = String(currentDate.getHours()).padStart(2, '0'); // Ensure 2 digits
+    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+    const seconds = String(currentDate.getSeconds()).padStart(2, '0');
+    time.innerText = `${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateTime, 1000);
+updateTime();
+
 
 dice.addEventListener('click', () => {
   setTimeout(getAdvice, 300); // Add a 0.3-second delay before executing getAdvice
