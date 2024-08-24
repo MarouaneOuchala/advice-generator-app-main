@@ -49,10 +49,13 @@ body {
   border: #01d681;
   border-style: outset;
   border-width:1px;
-  box-shadow: 0px 0px 500px rgba(0, 217, 119, 0.7);
+  transition: all 0.7s ease-in-out;
   background: var(--clr-1);
 }
 
+.card:hover{
+  box-shadow: 0px 0px 100px rgba(0, 217, 119, 0.7);
+}
 @property --angle{
   syntax: "<angle>";
   initial-value: 0deg;
@@ -123,6 +126,14 @@ body {
     background-color: hsl(150, 100%, 66%) ;
     transform: translateX(-50%) translateY(10%) scale(1.1); /* Slightly enlarge the circle */
     box-shadow: 0px 0px 20px rgba(0, 217, 119, 0.7);
+    filter: invert();
+}
+
+#dice{
+  transition: all 0.3s ease-in-out;
+}
+#dice:hover{
+  transform: rotate(180deg); /* Rotate 180 degrees */
 }
 
 #line {
@@ -136,19 +147,13 @@ body {
   width: 210px;
   background-color: grey;
   opacity: 0.25;
-  margin-right: 40px;
- 
+  margin-right: 5px;
 }
 
 #mid{
 display: flex;
 flex-direction: row;
 gap: 5px;
-position: absolute;
-    left: 50%;            
-    transform: translateX(-50%) translateY(-275%); 
-    bottom: -25px
-
 }
 
 .pause{
@@ -156,7 +161,7 @@ position: absolute;
     width: 4px;
     background-color: hsl(193, 38%, 86%);
     border-radius: 20px;
-
+    transform: translateY(-50%);
 }
 
 #right {

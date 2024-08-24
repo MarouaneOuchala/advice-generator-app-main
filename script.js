@@ -1,7 +1,10 @@
 const api = "https://api.adviceslip.com/advice";
 const dice = document.getElementById('icon');
 
-dice.addEventListener('click', getAdvice);
+dice.addEventListener('click', () => {
+  setTimeout(getAdvice, 300); // Add a 0.3-second delay before executing getAdvice
+});
+
 function getAdvice() {
   fetch(api)
     .then((response) => {
